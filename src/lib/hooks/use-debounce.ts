@@ -1,6 +1,6 @@
 export const useDebounce = <T extends unknown[]>(
     callback: (...args: T) => void,
-    timeout: number
+    timeout = 300
   ): ((...args: T) => void) => {
     let timer: NodeJS.Timeout
 
