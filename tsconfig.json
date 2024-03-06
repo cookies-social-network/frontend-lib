@@ -24,7 +24,6 @@
     "experimentalDecorators": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "allowImportingTsExtensions": true,
   },
 
   "exclude": ["node_modules"]
