@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { resolve } from 'path'
@@ -11,6 +12,10 @@ export default defineConfig({
       rollupTypes: true,
     }),
   ],
+  test: {
+    globals: true,
+    environment: 'happy-dom',
+  },
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
