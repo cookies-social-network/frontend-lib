@@ -1,10 +1,10 @@
-import { isNumber, replaceString } from './lib/utils'
+import { isNumber, markText } from './lib/utils'
 
 function App() {
   return (
     <>
       <div>
-        <div dangerouslySetInnerHTML={{ __html: replaceString('цили', 'Цилиндр') }} />
+        <div dangerouslySetInnerHTML={{ __html: markText({ repString: 'цил', fullString: 'Цилиндры' }) }} />
 
         { JSON.stringify(isNumber('Привет')) }
       </div>
