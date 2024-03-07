@@ -19,8 +19,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
-      name: 'CookiesUiLib',
-      fileName: 'cookies-ui-lib',
+      name: 'CookiesLib',
+      fileName: 'cookies-lib',
       formats: ['es', 'cjs', 'umd', 'iife']
     },
     rollupOptions: {
