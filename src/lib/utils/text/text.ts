@@ -7,7 +7,7 @@ type MarkTextOptionsType = {
 		style?: Partial<CSSStyleDeclaration>
 	}
 }
-  
+
 export const markText = (params: MarkTextOptionsType) => {
 	const {
 			repString,

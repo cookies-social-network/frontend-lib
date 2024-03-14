@@ -2,9 +2,9 @@ import { markText, setDeclination } from '../text'
 
 import { describe, it, expect } from 'vitest'
 
-describe('Testing text', () => { 
-	describe('Testing setDeclination', () => { 
-		it ('should be right the declination', () => { 
+describe('Testing text', () => {
+	describe('Testing setDeclination', () => {
+		it ('should be right the declination', () => {
 			expect(setDeclination(1, ['яблоко', 'яблока', 'яблок'])).toBe('яблоко')
 
 			expect(setDeclination(3, ['яблоко', 'яблока', 'яблок'])).toBe('яблока')
@@ -13,8 +13,8 @@ describe('Testing text', () => {
 		})
 	})
 
-	describe('Testing markText', () => { 
-		it ('should be have strong tag', () => { 
+	describe('Testing markText', () => {
+		it ('should be have strong tag', () => {
 			expect(markText({ repString: 'цил', fullString: 'Цилиндры' })).toBe('<strong>Цил</strong>индры')
 		})
 
@@ -30,17 +30,24 @@ describe('Testing text', () => {
 					  options:{
 							class: 'test',
 						  style: 'color: green'
-						} 
+						}
 				})
 
 			expect(markTextFn).toBe('<span class="test" style="color: green">Цил</span>индры')
 		})
 
-		it ('should be have empty full string', () => { 
+    it ('should replace in middle of string', () => {
+      const markTextFn = markText({ repString: 'цил', fullString: 'Красивые цилиндры' })
+      const expectedValue = 'Красивые <strong>цил</strong>индры'
+
+      expect(markTextFn).toBe(expectedValue)
+    })
+
+		it ('should be have empty full string', () => {
 			expect(markText({ repString: 'цил', fullString: '' })).toBe('')
 		})
 
-		it ('should be have empty rep string', () => { 
+		it ('should be have empty rep string', () => {
 			expect(markText({ repString: '', fullString: 'Цилиндры' })).toBe('Цилиндры')
 		})
 	})
